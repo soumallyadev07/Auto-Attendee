@@ -7,8 +7,7 @@ from datetime import datetime
 import calendar
 my_date = datetime.today()
 
-# username = input("Enter in your username: ")
-username = "sdev_be18@thapar.edu"
+username = input("Enter in your username: ")
 password = getpass("Enter your password: ")
 
 lms = webdriver.Chrome(executable_path="ChromeDriver/chromedriver.exe")
