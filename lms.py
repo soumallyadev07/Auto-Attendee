@@ -34,24 +34,17 @@ for j in range(len(lst)):
         lst.remove(lst[j-1])
 
 
-curr = 'my'
 isStarted = False
 
 for i in lst:
     while True:
         if isStarted == False:
+            lms.get('https://ada-lms.thapar.edu/moodle/my/')
+            time.sleep(1200)
             if datetime.now().hour == int(i[0].split(':')[0]) and datetime.now().minute == int(i[0].split(':')[1]) and calendar.day_name[my_date.weekday()] == i[2]:
                 lms.get(i[3])
+                time.sleep(600)
                 isStarted = True
-            else:
-                if curr == 'my':
-                    lms.get('https://ada-lms.thapar.edu/moodle/my/')
-                    time.sleep(1200)
-                    curr = 'moo'
-                else:
-                    lms.get('https://ada-lms.thapar.edu/moodle/calendar/view.php?view=month')
-                    time.sleep(1200)
-                    curr = 'my'
         elif isStarted == True:
             if datetime.now().hour == int(i[1].split(':')[0]) and datetime.now().minute == int(i[1].split(':')[1]) and calendar.day_name[my_date.weekday()] == i[2]:
                 time.sleep(1)
