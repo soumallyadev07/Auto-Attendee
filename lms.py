@@ -36,15 +36,17 @@ for j in range(len(lst)):
 
 isStarted = False
 
+isStarted = False
+
 for i in lst:
     while True:
         if isStarted == False:
-            lms.get('https://ada-lms.thapar.edu/moodle/my/')
-            time.sleep(1200)
             if datetime.now().hour == int(i[0].split(':')[0]) and datetime.now().minute == int(i[0].split(':')[1]) and calendar.day_name[my_date.weekday()] == i[2]:
                 lms.get(i[3])
-                time.sleep(600)
+                time.sleep(10)
                 isStarted = True
+            else:
+                lms.get('https://ada-lms.thapar.edu/moodle/my/')
         elif isStarted == True:
             if datetime.now().hour == int(i[1].split(':')[0]) and datetime.now().minute == int(i[1].split(':')[1]) and calendar.day_name[my_date.weekday()] == i[2]:
                 time.sleep(1)

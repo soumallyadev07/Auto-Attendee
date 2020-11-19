@@ -25,6 +25,7 @@ for j in range(len(lst)):
 isStarted = False
 
 for i in lst:
+    print(i)
     while True:
         if isStarted == False:
             if datetime.now().hour == int(i[1].split(':')[0]) and datetime.now().minute == int(i[1].split(':')[1]) and calendar.day_name[my_date.weekday()] == i[3]:
@@ -37,3 +38,4 @@ for i in lst:
                 #keyboard.press(Key.enter)
                 isStarted = False
                 break
+print('Day Complete')
