@@ -72,6 +72,9 @@ for i in lst:
                     #print('10')
                     isStarted = False
                     break
+            elif calendar.day_name[my_date.weekday()] != i[3]:
+                isStarted = False
+                break
         elif isStarted == True:
             #print('7')
             if datetime.now().hour == int(i[2].split(':')[0]) and datetime.now().minute == int(i[2].split(':')[1]) and calendar.day_name[my_date.weekday()] == i[3]:
