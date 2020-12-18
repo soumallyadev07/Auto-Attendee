@@ -54,6 +54,9 @@ for i in lst:
                     #print('3')
                     isStarted = False
                     break
+            elif calendar.day_name[my_date.weekday()] != i[2]:
+                isStarted = False
+                break
             else:
                 num = random.randint(1, 3)
                 if num == 1:
